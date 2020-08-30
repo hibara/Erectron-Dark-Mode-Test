@@ -1,0 +1,223 @@
+/* -- デフォルト（ライトモード）・カラー -- */
+:root {
+  --base-color-00: #333333;
+  --base-color-01: #494949;
+  --base-color-02: #606060;
+  --base-color-03: #777777;
+  --base-color-04: #8d8d8d;
+  --base-color-05: #a4a4a4;
+  --base-color-06: #bbbbbb;
+  --base-color-07: #d1d1d1;
+  --base-color-08: #e8e8e8;
+  --base-color-09: #ffffff;
+
+  --font-color: var(--base-color-00);
+  --main-background-color: var(--base-color-09);
+  --header-background-color: var(--base-color-08);
+  --header-font-color: var(--base-color-00);
+  --left-menu-background: var(--base-color-07);
+  --left-menu-border: var(--base-color-06);
+  --left-menu-sub-background: var(--base-color-08);
+  --left-menu-top-hover: var(--base-color-08);
+  --left-menu-sub-hover: var(--base-color-09);
+  --sheet-background-color: var(--base-color-09);
+  --toggle-switch-ball: var(--base-color-08);
+  --toggle-switch-background-color: var(--base-color-09);
+  --toggle-switch-icon: var(--base-color-00);
+  --toggle-switch-box-shadow: var(--base-color-03);
+  --scrollbar-track-piece: var(--base-color-07);
+  --scrollbar-track-thumb: var(--base-color-05);
+
+}
+/* -- ダークモード・カラー -- */
+[data-theme="dark"] {
+  --font-color: var(--base-color-09);
+  --main-background-color: var(--base-color-00);
+  --header-background-color: var(--base-color-01);
+  --header-font-color: var(--base-color-09);
+  --left-menu-background: var(--base-color-02);
+  --left-menu-border: var(--base-color-00);
+  --left-menu-sub-background: var(--base-color-03);
+  --left-menu-top-hover: var(--base-color-04);
+  --left-menu-sub-hover: var(--base-color-05);
+  --sheet-background-color: var(--base-color-01);
+  --toggle-switch-ball: var(--base-color-08);
+  --toggle-switch-background-color: var(--base-color-00);
+  --toggle-switch-icon: var(--base-color-09);
+  --toggle-switch-box-shadow: var(--base-color-03);
+  --scrollbar-track-piece: var(--base-color-07);
+  --scrollbar-track-thumb: var(--base-color-02);
+}
+/* -- ウェブページ全体 -- */
+body,html {
+  margin: 0;
+  height: 150%;
+  background: var(--main-background-color);
+  background-blend-mode: multiply, screen;
+}
+/* -- 垂直スクロールバー -- */
+::-webkit-scrollbar {
+  width: 16px;
+  height: 15px;
+}
+::-webkit-scrollbar-track-piece {
+  background-color: var(--scrollbar-track-piece);
+}
+::-webkit-scrollbar-thumb:vertical {
+  height: 30px;
+  background-color: var(--scrollbar-track-thumb);
+}
+/* -- 上部ヘッダー -- */
+#header {
+  position: fixed;
+  margin-top: 0;
+  width: calc(100% - 256px);
+  height: 54px;
+  background-color: var(--header-background-color);
+}
+#header p {
+  color: var(--header-font-color);
+  font-size: 24px;
+  text-align: center;
+  padding: 16px;
+}
+/* -- コンテナ -- */
+#container {
+  display: flex;
+}
+
+/* -- 左側メニュー -- */
+#left-menu {
+  display: block;
+  width: 256px;
+  background: var(--left-menu-background);
+  margin: 0;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+}
+.list {
+  color: var(--font-color);
+  list-style-type: none;
+  border-bottom: 2px solid var(--left-menu-border);
+}
+li {
+  display: flex;
+  align-content: center;
+  justify-content: flex-start;
+  padding: 18px 30px;
+  cursor: pointer;
+  margin-top: 0;
+}
+/* -- 右矢印アイコン -- */
+.arrow-right-svg {
+  fill: var(--font-color);
+  width: 16px;
+  height: 16px;
+}
+li .arrow-right-svg {
+  margin-left: auto;
+  margin-right: 8px;
+  margin-top: 0;
+}
+.sub h3 {
+  font-weight: 300;
+}
+.sub {
+  display: none;
+  background: var(--left-menu-sub-background);
+  transition: background 0.3s ease;
+}
+.sub:hover {
+  background: var(--left-menu-sub-hover);
+}
+.top {
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+.top h3 {
+  font-weight: 500;
+  font-size:17px;
+}
+.top:hover {
+  background: var(--left-menu-top-hover);
+}
+.rotatedown {
+  margin-top: 0;
+  margin-right: 50px;
+  transform: rotate(90deg);
+}
+/* -- メインエリア -- */
+#main {
+  width: 100%;
+  margin-left: 256px;
+  text-align: center;
+}
+/* -- ダークモード切替トグルスイッチ -- */
+#dark-mode-toggle {
+  /* 右上固定 */
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 14px 32px 0 0;
+  /* 初回transition中に表示されないようにするため非表示にしておく */
+  display: none;
+}
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+.label {
+  background-color: var(--toggle-switch-background-color);
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+  height: 16px;
+  width: 40px;
+  transform: scale(1.5);
+}
+.label .ball {
+  background-color: var(--toggle-switch-ball);
+  box-shadow: 0 0 2px var(--toggle-switch-box-shadow);
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 22px;
+  width: 22px;
+  transform: translateX(1px);
+  transition: transform 0.2s linear;
+}
+.checkbox:checked + .label .ball {
+  transform: translateX(24px);
+}
+.dark-mode-svg {
+  fill: var(--toggle-switch-icon);
+  margin-top: 2px;
+  width: 16px;
+  height: 16px;
+}
+.light-mode-svg {
+  fill: var(--toggle-switch-icon);
+  width: 16px;
+  height: 16px;
+}
+/* -- 本文・テキストブロック -- */
+.sheet {
+  color: var(--font-color);
+  background: var(--sheet-background-color);
+  padding: 40px;
+  max-width: 600px;
+  margin: 80px auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+}
+.sheet p {
+  text-align: left;
+  line-height: 1.5em;
+}
+
