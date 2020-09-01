@@ -6,6 +6,9 @@ bower_components/
 node_modules/
 dist/
 
+#
+*-darwin-x64/
+
 #files
 *.tgz
 *.log

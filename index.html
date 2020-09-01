@@ -2,7 +2,8 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <!-- pakcage.jsonから読み込み -->
+  <!--  <title></title>-->
   <link rel="stylesheet" href="assets/reset.css">
   <link rel="stylesheet" href="assets/style.css">
   <script src="assets/jquery-3.5.1.min.js"></script>
@@ -46,56 +47,56 @@
 <div id="container">
   
   <div id="left-menu">
-    <ul class="list">
-      <li class="top">
+    <ul class="list-menu">
+      <li class="top-menu">
         <h3>夏目漱石</h3>
         <svg class="arrow-right-svg">
           <use x="0" y="0" xlink:href="#arrow-right-icon"></use>
         </svg>
       </li>
-      <li class="sub"><h3>草枕</h3></li>
-      <li class="sub"><h3>虞美人草</h3></li>
-      <li class="sub"><h3>こころ</h3></li>
-      <li class="sub"><h3>三四郎</h3></li>
+      <li class="sub-menu"><h3>草枕</h3></li>
+      <li class="sub-menu"><h3>虞美人草</h3></li>
+      <li class="sub-menu"><h3>こころ</h3></li>
+      <li class="sub-menu"><h3>三四郎</h3></li>
     </ul>
     
-    <ul class="list">
-      <li class="top">
+    <ul class="list-menu">
+      <li class="top-menu">
         <h3>芥川龍之介</h3>
         <svg class="arrow-right-svg">
           <use x="0" y="0" xlink:href="#arrow-right-icon"></use>
         </svg>
       </li>
-      <li class="sub"><h3>或阿呆の一生</h3></li>
-      <li class="sub"><h3>河童</h3></li>
-      <li class="sub"><h3>蜘蛛の糸</h3></li>
-      <li class="sub"><h3>羅生門</h3></li>
+      <li class="sub-menu"><h3>或阿呆の一生</h3></li>
+      <li class="sub-menu"><h3>河童</h3></li>
+      <li class="sub-menu"><h3>蜘蛛の糸</h3></li>
+      <li class="sub-menu"><h3>羅生門</h3></li>
     </ul>
     
-    <ul class="list">
-      <li class="top">
+    <ul class="list-menu">
+      <li class="top-menu">
         <h3>太宰治</h3>
         <svg class="arrow-right-svg">
           <use x="0" y="0" xlink:href="#arrow-right-icon"></use>
         </svg>
       </li>
-      <li class="sub"><h3>走れメロス</h3></li>
-      <li class="sub"><h3>津軽</h3></li>
-      <li class="sub"><h3>お伽草紙</h3></li>
-      <li class="sub"><h3>人間失格</h3></li>
+      <li class="sub-menu"><h3>走れメロス</h3></li>
+      <li class="sub-menu"><h3>津軽</h3></li>
+      <li class="sub-menu"><h3>お伽草紙</h3></li>
+      <li class="sub-menu"><h3>人間失格</h3></li>
     </ul>
     
     <ul class="list">
-      <li class="top">
+      <li class="top-menu">
         <h3>宮沢賢治</h3>
         <svg class="arrow-right-svg">
           <use x="0" y="0" xlink:href="#arrow-right-icon"></use>
         </svg>
       </li>
-      <li class="sub"><h3>銀河鉄道の夜</h3></li>
-      <li class="sub"><h3>風の又三郎</h3></li>
-      <li class="sub"><h3>注文の多い料理店</h3></li>
-      <li class="sub"><h3>春と修羅</h3></li>
+      <li class="sub-menu"><h3>銀河鉄道の夜</h3></li>
+      <li class="sub-menu"><h3>風の又三郎</h3></li>
+      <li class="sub-menu"><h3>注文の多い料理店</h3></li>
+      <li class="sub-menu"><h3>春と修羅</h3></li>
     </ul>
   </div>
   
@@ -165,21 +166,24 @@
   // ドキュメントルート
   const doc = $(document.documentElement);
   
-  // 左側メニューの折り畳み
-  $('.list').each(() => {
-    let topli = $(this).children(":first-child");
-    topli.click(function(){
-      let parent = $(this).parent();
-      let sublis = parent.find(".sub");
+  $('.list-menu').each((index, element) => {
+    let topli = $(element).children(":first-child");
+    topli.on('click', e => {
+      let parent = $(e.currentTarget).parent();
+      let sublis = parent.find(".sub-menu");
       if(sublis.is(':visible')){
+        // サブメニューのスライド・アップ
         sublis.slideUp();
+        // 矢印アイコンのの回転（クラスの追加）
         topli.find('svg').removeClass('rotatedown');
       }
       else{
+        // サブメニューのスライド・ダウン
         sublis.slideDown();
+        // 矢印アイコンを戻す（クラスの削除）
         topli.find('svg').addClass('rotatedown');
       }
-    });
+    })
   });
 
   // ダークモード切り替えスイッチ
@@ -187,7 +191,7 @@
   toggleSwitch.change((e) => {
     if (e.target.checked) {
       doc.attr('data-theme', 'dark');
-      localStorage.setItem('theme', 'dark');
+      localStorage.setItem('theme', 'darks');
     }
     else {
       doc.attr('data-theme', 'light');

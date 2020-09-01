@@ -1,15 +1,30 @@
 {
-  "name": "Erectron-Dark-Mode-Test",
+  "name": "ErectronDarkModeTest",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "productName": "ErectronDarkModeTest",
+  "copyright": "Copyright©2020 M.Hibara, All rights reserved.",
+  "description": "Erectronアプリのダークモード切替サンプル",
+  "main": "main.js",
   "scripts": {
+    "start": "node_modules/.bin/electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "build": {
+    "appId": "org.hibara.erectrondarkmodetest",
+    "mac": {
+      "category": "public.app-category.developer-tools"
+    },
+    "productName": "ErectronDarkModeTest",
+    "files": [
+      "./"
+    ]
+  },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Mistuhiro Hibara",
+  "license": "MIT",
   "devDependencies": {
-    "electron": "^10.0.0"
+    "@electron/build-tools": "^1.0.4",
+    "electron": "^10.1.0",
+    "electron-packager": "^15.1.0"
   }
 }

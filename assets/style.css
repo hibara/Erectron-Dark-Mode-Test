@@ -18,7 +18,7 @@
   --left-menu-background: var(--base-color-07);
   --left-menu-border: var(--base-color-06);
   --left-menu-sub-background: var(--base-color-08);
-  --left-menu-top-hover: var(--base-color-08);
+  --left-menu-top-hover: var(--base-color-06);
   --left-menu-sub-hover: var(--base-color-09);
   --sheet-background-color: var(--base-color-09);
   --toggle-switch-ball: var(--base-color-08);
@@ -96,10 +96,9 @@ body,html {
   height: 100%;
   overflow-y: auto;
 }
-.list {
+.list-menu {
   color: var(--font-color);
   list-style-type: none;
-  border-bottom: 2px solid var(--left-menu-border);
 }
 li {
   display: flex;
@@ -108,8 +107,10 @@ li {
   padding: 18px 30px;
   cursor: pointer;
   margin-top: 0;
+  color: var(--font-color);
+  border-bottom: 2px solid var(--left-menu-border);
 }
-/* -- 右矢印アイコン -- */
+/* 右矢印アイコン */
 .arrow-right-svg {
   fill: var(--font-color);
   width: 16px;
@@ -120,32 +121,31 @@ li .arrow-right-svg {
   margin-right: 8px;
   margin-top: 0;
 }
-.sub h3 {
-  font-weight: 300;
-}
-.sub {
-  display: none;
-  background: var(--left-menu-sub-background);
-  transition: background 0.3s ease;
-}
-.sub:hover {
-  background: var(--left-menu-sub-hover);
-}
-.top {
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-}
-.top h3 {
-  font-weight: 500;
-  font-size:17px;
-}
-.top:hover {
-  background: var(--left-menu-top-hover);
-}
 .rotatedown {
   margin-top: 0;
   margin-right: 50px;
   transform: rotate(90deg);
+}
+.top-menu {
+  transition: all 0.3s ease;
+}
+.top-menu h3 {
+  font-weight: 500;
+  font-size:17px;
+}
+.top-menu:hover {
+  background: var(--left-menu-top-hover);
+}
+.sub-menu h3 {
+  font-weight: 300;
+}
+.sub-menu {
+  display: none;
+  background: var(--left-menu-sub-background);
+  transition: background 0.3s ease;
+}
+.sub-menu:hover {
+  background: var(--left-menu-sub-hover);
 }
 /* -- メインエリア -- */
 #main {
