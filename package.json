@@ -7,7 +7,8 @@
   "main": "main.js",
   "scripts": {
     "start": "node_modules/.bin/electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "package-mac": "node_modules/.bin/electron-packager . --asar --overwrite --platform=darwin --arch=x64 --icon=main-icon/app.icns --prune=true --out=release-builds --darwinDarkModeSupport=true --extraResources=images"
   },
   "build": {
     "appId": "org.hibara.erectrondarkmodetest",
@@ -24,7 +25,7 @@
   "license": "MIT",
   "devDependencies": {
     "@electron/build-tools": "^1.0.4",
-    "electron": "^10.1.0",
+    "electron": "^10.1.3",
     "electron-packager": "^15.1.0"
   }
 }

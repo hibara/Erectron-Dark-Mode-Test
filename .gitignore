@@ -6,8 +6,8 @@ bower_components/
 node_modules/
 dist/
 
-#
-*-darwin-x64/
+# build application folder
+release-builds/
 
 #files
 *.tgz
