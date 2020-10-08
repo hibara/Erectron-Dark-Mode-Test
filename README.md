@@ -28,7 +28,7 @@ FLAT SIDE MENU NAVIGATION - CodePen
 
 このサンプルアプリケーションについて解説したページは、以下に投稿しています。こちらを参考にしてください。
 
-Electron で macOS のダークモード切替機能を実装する  
+参考記事：**Electron で macOS のダークモード切替機能を実装する**  
 <https://qiita.com/hibara/items/e86150a961f5f3226b5c>
 
 ## 実行ファイル
