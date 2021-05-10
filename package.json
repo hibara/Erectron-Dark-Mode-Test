@@ -1,6 +1,6 @@
 {
   "name": "ErectronDarkModeTest",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "productName": "ErectronDarkModeTest",
   "copyright": "Copyright©2020 M.Hibara, All rights reserved.",
   "description": "Erectronアプリのダークモード切替サンプル",
@@ -25,7 +25,12 @@
   "license": "MIT",
   "devDependencies": {
     "@electron/build-tools": "^1.0.4",
+<<<<<<< HEAD
     "electron": "^10.2.0",
     "electron-packager": "^15.1.0"
+=======
+    "electron": "^12.0.6",
+    "electron-packager": "^15.2.0"
+>>>>>>> d91bb0de3154b1785dddcf3621ab3712145abff6
   }
 }

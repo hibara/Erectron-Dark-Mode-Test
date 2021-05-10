@@ -24,6 +24,12 @@ FLAT SIDE MENU NAVIGATION - CodePen
 
 `electron-packager` モジュールをインストールしており、付属の `package.json` の中のコマンドで、macOSアプリケーションとしてのビルドするコマンドが用意されています。ビルドする場合は、`npm run package-mac` を実行してみてください。
 
+実際の中身はこんな感じ。
+
+```sh
+node_modules/.bin/electron-packager . --asar --overwrite --platform=darwin --arch=x64 --icon=main-icon/app.icns --prune=true --out=release-builds --darwinDarkModeSupport=true --extraResources=images
+```
+
 ## 解説ページ
 
 このサンプルアプリケーションについて解説したページは、以下に投稿しています。こちらを参考にしてください。

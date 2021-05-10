@@ -1,0 +1,49 @@
+From d29905abb9528c0ff65d97ab6ce8448b0a42f53a Mon Sep 17 00:00:00 2001
+From: "dependabot[bot]" <49699333+dependabot[bot]@users.noreply.github.com>
+Date: Mon, 10 May 2021 20:45:57 +0000
+Subject: [PATCH] Bump electron from 10.1.3 to 10.2.0
+
+Bumps [electron](https://github.com/electron/electron) from 10.1.3 to 10.2.0.
+- [Release notes](https://github.com/electron/electron/releases)
+- [Changelog](https://github.com/electron/electron/blob/master/docs/breaking-changes.md)
+- [Commits](https://github.com/electron/electron/compare/v10.1.3...v10.2.0)
+
+Signed-off-by: dependabot[bot] <support@github.com>
+---
+ package-lock.json | 6 +++---
+ package.json      | 2 +-
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/package-lock.json b/package-lock.json
+index 4c4af7d..e52a96e 100644
+--- a/package-lock.json
++++ b/package-lock.json
+@@ -319,9 +319,9 @@
+       "dev": true
+     },
+     "electron": {
+-      "version": "10.1.3",
+-      "resolved": "https://registry.npmjs.org/electron/-/electron-10.1.3.tgz",
+-      "integrity": "sha512-CR8LrlG47MdAp317SQ3vGYa2o2cIMdMSMPYH46OVitFLk35dwE9fn3VqvhUIXhCHYcNWIAPzMhkVHpkoFdKWuw==",
++      "version": "10.2.0",
++      "resolved": "https://registry.npmjs.org/electron/-/electron-10.2.0.tgz",
++      "integrity": "sha512-GBUyq8dwUqXPkCTkoID+eZ5Pm9GFlLUd2eSoGe8UOaHeW68SgCf5t75/uGHraQ1OIz/0qniyH5M4ebWEHGppyQ==",
+       "dev": true,
+       "requires": {
+         "@electron/get": "^1.0.1",
+diff --git a/package.json b/package.json
+index 98f3b9a..e65b3fd 100644
+--- a/package.json
++++ b/package.json
+@@ -25,7 +25,7 @@
+   "license": "MIT",
+   "devDependencies": {
+     "@electron/build-tools": "^1.0.4",
+-    "electron": "^10.1.3",
++    "electron": "^10.2.0",
+     "electron-packager": "^15.1.0"
+   }
+ }
+-- 
+2.27.0
+
